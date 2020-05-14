@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+       "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+       "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection properties -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/test2</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">jalihal</property>
+
+		<!-- JDBC connection pool (using the built-in) -->
+		<property name="connection.pool_size">10</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Dont Drop and re-create the database schema on startup,Just update 
+			it -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- <mapping class="com.oneTooneMapping.main.Applicant" />
+		<mapping class="com.oneTooneMapping.main.Passport" /> -->
+		<mapping class="com.oneToManyBidirectionalmapping.Student" />
+		<mapping class="com.oneToManyBidirectionalmapping.University" />
+		<!-- <mapping class="com.onetoone.unidirectionalmapping.Customer" /> 
+		<mapping class="com.onetoone.unidirectionalmapping.Address" />  -->
+		<!-- <mapping class="com.mapping.onetoone.VehicleOrder" />
+		<mapping class="com.mapping.onetoone.Vehicle" /> -->
+		<!-- <mapping class="com.manytomanymapping.bidirectional.Employee" />
+		<mapping class="com.manytomanymapping.bidirectional.Project" /> -->
+
+
+	</session-factory>
+
+</hibernate-configuration>
